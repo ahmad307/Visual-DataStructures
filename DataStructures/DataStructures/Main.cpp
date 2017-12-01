@@ -1,5 +1,11 @@
 #include <SFML\Graphics.hpp>
 
+#include"BST\BST.h"
+#include"LinkedList\LinkedList.h"
+#include"Queue\Queue.h"
+#include"Stack\Stack.h"
+#include"Vector\Vector.h"
+
 int main()
 {
 	/*
