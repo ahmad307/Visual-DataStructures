@@ -1,3 +1,22 @@
-﻿  Main.cpp
+﻿  Vector.cpp
+d:\git\visual-datastructures\datastructures\datastructures\vector\vector.cpp(67): warning C4018: '<': signed/unsigned mismatch
+d:\git\visual-datastructures\datastructures\datastructures\vector\vector.cpp(53): warning C4996: 'sf::Text::setColor': was declared deprecated
+  d:\git\visual-datastructures\datastructures\sfml\include\sfml\graphics\text.hpp(177): note: see declaration of 'sf::Text::setColor'
+d:\git\visual-datastructures\datastructures\datastructures\vector\vector.cpp(61): warning C4996: 'sf::Text::setColor': was declared deprecated
+  d:\git\visual-datastructures\datastructures\sfml\include\sfml\graphics\text.hpp(177): note: see declaration of 'sf::Text::setColor'
+d:\git\visual-datastructures\datastructures\datastructures\vector\vector.cpp(79): warning C4996: 'sf::Text::setColor': was declared deprecated
+  d:\git\visual-datastructures\datastructures\sfml\include\sfml\graphics\text.hpp(177): note: see declaration of 'sf::Text::setColor'
+d:\git\visual-datastructures\datastructures\datastructures\vector\vector.cpp(95): warning C4996: 'sf::Text::setColor': was declared deprecated
+  d:\git\visual-datastructures\datastructures\sfml\include\sfml\graphics\text.hpp(177): note: see declaration of 'sf::Text::setColor'
+d:\git\visual-datastructures\datastructures\datastructures\vector\vector.cpp(145): warning C4996: '_sleep': This function or variable has been superceded by newer library or operating system functionality. Consider using Sleep instead. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdlib.h(1282): note: see declaration of '_sleep'
+d:\git\visual-datastructures\datastructures\datastructures\vector\vector.cpp(160): warning C4996: '_sleep': This function or variable has been superceded by newer library or operating system functionality. Consider using Sleep instead. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdlib.h(1282): note: see declaration of '_sleep'
+d:\git\visual-datastructures\datastructures\datastructures\vector\vector.cpp(175): warning C4018: '>=': signed/unsigned mismatch
+d:\git\visual-datastructures\datastructures\datastructures\vector\vector.cpp(205): warning C4018: '>': signed/unsigned mismatch
+d:\git\visual-datastructures\datastructures\datastructures\vector\vector.cpp(234): warning C4018: '>=': signed/unsigned mismatch
+d:\git\visual-datastructures\datastructures\datastructures\vector\vector.cpp(245): warning C4018: '>': signed/unsigned mismatch
+  Main.cpp
+  Generating Code...
   DataStructures.vcxproj -> D:\Git\Visual-DataStructures\DataStructures\Debug\DataStructures.exe
   DataStructures.vcxproj -> D:\Git\Visual-DataStructures\DataStructures\Debug\DataStructures.pdb (Partial PDB)

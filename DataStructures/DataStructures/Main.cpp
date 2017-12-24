@@ -6,28 +6,49 @@
 #include"Stack\Stack.h"
 #include"Vector\Vector.h"
 
-int main()
+void createVector(sf::RenderWindow &window, sf::Font font)
 {
-	/*
-	Test Code
-	Displays a green circle in the middle of the screen
-	*/
-	sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
-	sf::CircleShape shape(100.f);
-	shape.setFillColor(sf::Color::Green);
+	//Calling the class
+	Vector v(window, font);
+	v.inputHandler();
+	v.drawVector(window);
 
 	while (window.isOpen())
 	{
-		sf::Event event;
-		while (window.pollEvent(event))
-		{
-			if (event.type == sf::Event::Closed)
-				window.close();
-		}
-
-		window.clear();
-		window.draw(shape);
-		window.display();
+		//Breaks if user chooses exit
+		if (v.editingHandler(window) == false)
+			break;
 	}
+}
+
+int main()
+{
+	int length = 1800, height = 720;
+
+	//Creating display window
+	sf::RenderWindow window(sf::VideoMode(length, height), "Vector", sf::Style::Close | sf::Style::Resize);
+
+	//Loading font
+	sf::Font font;
+	font.loadFromFile("arial_font/arial.ttf");
+
+	while (true)
+	{
+		std::cout << "Enter the desired choice number" << std::endl;
+		std::cout << "[1]Vector  [2]Stack  [3]Queue  [4]LinkedList  [5]BinarySearchTree  [6]Exit" << std::endl;
+		int choice;
+		std::cin >> choice;
+
+		if (choice == 1)
+		{
+			//Calling the Vector class
+			createVector(window, font);
+		}
+		else if (choice == 6)
+		{
+			break;
+		}
+	}
+
 	return 0;
 }
