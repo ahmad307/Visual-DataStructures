@@ -21,6 +21,23 @@ void createVector(sf::RenderWindow &window, sf::Font font)
 	}
 }
 
+void createLinkedList(sf::RenderWindow &window)
+{
+	LinkedList LL(window);
+	LL.Drawinitial();
+	while (window.isOpen())
+	{
+		sf::Event event;
+		while (window.pollEvent(event))
+		{
+			if (event.type == sf::Event::Closed)
+				window.close();
+		}
+		if (!LL.startWork())
+			return;
+	}
+
+}
 int main()
 {
 	int length = 1800, height = 720;
@@ -43,6 +60,10 @@ int main()
 		{
 			//Calling the Vector class
 			createVector(window, font);
+		}
+		else if (choice == 4)
+		{
+			createLinkedList(window);
 		}
 		else if (choice == 6)
 		{

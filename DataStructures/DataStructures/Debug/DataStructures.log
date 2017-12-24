@@ -17,6 +17,22 @@ d:\git\visual-datastructures\datastructures\datastructures\vector\vector.cpp(205
 d:\git\visual-datastructures\datastructures\datastructures\vector\vector.cpp(234): warning C4018: '>=': signed/unsigned mismatch
 d:\git\visual-datastructures\datastructures\datastructures\vector\vector.cpp(245): warning C4018: '>': signed/unsigned mismatch
   Main.cpp
+  Node.cpp
+d:\git\visual-datastructures\datastructures\datastructures\linkedlist\node.cpp(10): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+d:\git\visual-datastructures\datastructures\datastructures\linkedlist\node.cpp(16): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+d:\git\visual-datastructures\datastructures\datastructures\linkedlist\node.cpp(21): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+d:\git\visual-datastructures\datastructures\datastructures\linkedlist\node.cpp(24): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+d:\git\visual-datastructures\datastructures\datastructures\linkedlist\node.cpp(28): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+d:\git\visual-datastructures\datastructures\datastructures\linkedlist\node.cpp(37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  LinkedList.cpp
+d:\git\visual-datastructures\datastructures\datastructures\linkedlist\linkedlist.cpp(14): warning C4018: '>': signed/unsigned mismatch
+d:\git\visual-datastructures\datastructures\datastructures\linkedlist\linkedlist.cpp(36): warning C4018: '>': signed/unsigned mismatch
+d:\git\visual-datastructures\datastructures\datastructures\linkedlist\linkedlist.cpp(44): warning C4018: '<': signed/unsigned mismatch
+d:\git\visual-datastructures\datastructures\datastructures\linkedlist\linkedlist.cpp(56): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+d:\git\visual-datastructures\datastructures\datastructures\linkedlist\linkedlist.cpp(57): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+d:\git\visual-datastructures\datastructures\datastructures\linkedlist\linkedlist.cpp(75): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+d:\git\visual-datastructures\datastructures\datastructures\linkedlist\linkedlist.cpp(81): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+d:\git\visual-datastructures\datastructures\datastructures\linkedlist\linkedlist.cpp(93): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
   Generating Code...
   DataStructures.vcxproj -> D:\Git\Visual-DataStructures\DataStructures\Debug\DataStructures.exe
   DataStructures.vcxproj -> D:\Git\Visual-DataStructures\DataStructures\Debug\DataStructures.pdb (Partial PDB)
