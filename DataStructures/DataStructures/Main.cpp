@@ -6,10 +6,9 @@
 #include"Stack\Stack.h"
 #include"Vector\Vector.h"
 
-void createVector(sf::RenderWindow &window, sf::Font font)
+void createVector(sf::RenderWindow &window)
 {
-	//Calling the class
-	Vector v(window, font);
+	Vector v(window);
 	v.inputHandler();
 	v.drawVector(window);
 
@@ -38,16 +37,19 @@ void createLinkedList(sf::RenderWindow &window)
 	}
 
 }
+
+void createQueue(sf::RenderWindow &window)
+{
+	queue q(window);
+}
+
 int main()
 {
 	int length = 1800, height = 720;
 
 	//Creating display window
-	sf::RenderWindow window(sf::VideoMode(length, height), "Vector", sf::Style::Close | sf::Style::Resize);
+	sf::RenderWindow window(sf::VideoMode(length, height), "Visual Data-Structures", sf::Style::Close | sf::Style::Resize);
 
-	//Loading font
-	sf::Font font;
-	font.loadFromFile("arial_font/arial.ttf");
 
 	while (true)
 	{
@@ -58,8 +60,11 @@ int main()
 
 		if (choice == 1)
 		{
-			//Calling the Vector class
-			createVector(window, font);
+			createVector(window);
+		}
+		else if (choice == 3)
+		{
+			createQueue(window);
 		}
 		else if (choice == 4)
 		{
@@ -68,6 +73,10 @@ int main()
 		else if (choice == 6)
 		{
 			break;
+		}
+		else
+		{
+			std::cout << "Invalid Input!" << std::endl;
 		}
 	}
 

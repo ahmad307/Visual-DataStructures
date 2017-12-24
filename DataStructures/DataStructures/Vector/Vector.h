@@ -5,12 +5,12 @@
 class Vector
 {
 	float valueCorX, valueCorY;
-	int n;
-	std::map<int, int> myMap;
+	int elementsNumber;
+	std::map<int, int> indicesToSort;
 	sf::Font font;
 	std::vector<int> arr;
 public:
-	Vector(sf::RenderWindow &window, sf::Font chosenFont);
+	Vector(sf::RenderWindow &window);
 
 	void drawIndex(sf::RenderWindow &window);
 	void markActive(float x, float y, sf::RenderWindow &window);

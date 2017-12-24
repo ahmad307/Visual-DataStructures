@@ -2,12 +2,12 @@
 
 
 //Class Constructor
-Vector::Vector(sf::RenderWindow &window, sf::Font chosenFont)
+Vector::Vector(sf::RenderWindow &window)
 {
 	//Setting initial drawing indices
 	valueCorX = 80.0f, valueCorY = 300.0f;
-	font = chosenFont;
-	n = 0;
+	font.loadFromFile("arial_font/arial.ttf");
+	elementsNumber = 0;
 }
 
 //Draws one index of the vector
@@ -45,7 +45,7 @@ void Vector::drawVector(sf::RenderWindow &window)
 {
 	window.clear(sf::Color::White);		//Making background white
 
-										//Drawing title
+	//Drawing title
 	sf::Text title;
 	title.setFont(font);
 	title.setPosition(600.0f, 10.0f);
@@ -57,7 +57,7 @@ void Vector::drawVector(sf::RenderWindow &window)
 	//Displaying number of elements in the vector
 	sf::Text elements;
 	elements.setFont(font);
-	elements.setString("Elements Count:  " + std::to_string(n));
+	elements.setString("Elements Count:  " + std::to_string(elementsNumber));
 	elements.setColor(sf::Color::Black);
 	elements.setCharacterSize(65);
 	elements.setPosition(150.0f, 600.0f);
@@ -66,7 +66,7 @@ void Vector::drawVector(sf::RenderWindow &window)
 	//Checking if the index is being sorted
 	for (int i = 0; i < arr.size(); i++)
 	{
-		if (myMap[i] == 1)
+		if (indicesToSort[i] == 1)
 		{
 			markActive(valueCorX, valueCorY, window);
 		}
@@ -117,9 +117,9 @@ void Vector::drawVector(sf::RenderWindow &window)
 void Vector::Merge(int l, int m, int r)
 {
 	//Marking indecies to be sorted in the map
-	myMap.clear();
+	indicesToSort.clear();
 	for (int i = l; i <= r; i++)
-		myMap[i] = 1;
+		indicesToSort[i] = 1;
 
 	//Copying two halves into new arrays
 	int size1 = m - l + 1, size2 = r - m;
@@ -165,10 +165,10 @@ void Vector::inputHandler()
 {
 	//User Input
 	std::cout << "Enter the number of elements you want to enter" << std::endl;
-	std::cin >> n;
+	std::cin >> elementsNumber;
 
-	std::cout << "Enter the " << n << " elements" << std::endl;
-	for (int i = 0; i < n; i++)
+	std::cout << "Enter the " << elementsNumber << " elements" << std::endl;
+	for (int i = 0; i < elementsNumber; i++)
 	{
 		int x;	std::cin >> x;
 
@@ -185,12 +185,12 @@ bool Vector::editingHandler(sf::RenderWindow &window)
 	std::cout << "Enter the desired choice number" << std::endl;
 	std::cout << "[1]PushBack  [2]PopBack  [3]InsertAt	 [4]RemoveAt  [5]Sort  [6]Exit" << std::endl;
 
-	myMap.clear();
+	indicesToSort.clear();
 	int x;	std::cin >> x;
 
 	if (x == 1)  //PushBack Case
 	{
-		if (n == 16)	//Handling max display size
+		if (elementsNumber == 16)	//Handling max display size
 		{
 			std::cout << "You've reached max vector size!" << std::endl;
 			return true;
@@ -199,29 +199,29 @@ bool Vector::editingHandler(sf::RenderWindow &window)
 		std::cout << "Enter the value to add" << std::endl;
 		std::cin >> x;
 
-		if (n == arr.size())
+		if (elementsNumber == arr.size())
 			arr.resize(arr.size() * 2);
 
-		if (arr.size() > n)
+		if (arr.size() > elementsNumber)
 		{
-			arr[n] = x;
+			arr[elementsNumber] = x;
 		}
 		else {
 			arr.push_back(x);
 		}
-		n++;
+		elementsNumber++;
 
 		drawVector(window);
 	}
 	else if (x == 2)  //PopBack Case
 	{
-		if (n == 0)
+		if (elementsNumber == 0)
 		{
 			std::cout << "Empty Vector, Nothing to remove" << "\n\n";
 		}
 		else {
-			arr[n - 1] = 0;
-			n--;
+			arr[elementsNumber - 1] = 0;
+			elementsNumber--;
 			drawVector(window);
 		}
 	}
@@ -239,12 +239,12 @@ bool Vector::editingHandler(sf::RenderWindow &window)
 				return true;
 			}
 
-			if (n == arr.size())
+			if (elementsNumber == arr.size())
 				arr.resize(arr.size() * 2);
 
-			if (arr.size() > n)
+			if (arr.size() > elementsNumber)
 			{
-				arr[n] = x;
+				arr[elementsNumber] = x;
 			}
 			else {
 				arr.push_back(x);
@@ -257,7 +257,7 @@ bool Vector::editingHandler(sf::RenderWindow &window)
 		else
 			arr.insert(arr.begin() + pos, x);
 
-		n++;
+		elementsNumber++;
 		drawVector(window);
 	}
 	else if (x == 4)  //DeleteAt Case
@@ -265,12 +265,12 @@ bool Vector::editingHandler(sf::RenderWindow &window)
 		std::cout << "Enter the index to remove" << std::endl;
 		int pos;	 std::cin >> pos;
 		arr.erase(arr.begin() + pos);
-		n--;
+		elementsNumber--;
 		drawVector(window);
 	}
 	else if (x == 5)  //Sort Case
 	{
-		MergeSort(0, n - 1, window);
+		MergeSort(0, elementsNumber - 1, window);
 	}
 	else if (x == 6)  //Exit
 	{

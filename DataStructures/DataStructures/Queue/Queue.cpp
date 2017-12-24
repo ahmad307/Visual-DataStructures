@@ -11,7 +11,7 @@ queue::queue(sf::RenderWindow &window )
 	text.setFont(font);
 	text.setCharacterSize(45);
 	text.setString("Queue");
-	font.loadFromFile("arial.ttf");
+	font.loadFromFile("arial_font/arial.ttf");
 	text.setPosition(175, 35);
 
 	side1.setSize(sf::Vector2f(400.0f, 12.0f));
@@ -44,12 +44,14 @@ void queue::handleInput()
 				window->close();
 			}
 		}
+
 		while (true) {
-			cout << "Press [1] to add new value\nPress [2] to delete value\nPress [3] to exit\n";
+			cout << "Press [1] to push\nPress [2] to pop\nPress [3] to exit\n";
 			cin >> choice;
+
 			if (choice == 1) {
 				if (size == 7) {
-					cout << "Queue is full.. You need to expand" << endl;
+					cout << "Queue reached the max size!" << endl;
 					break;
 				}
 				else {
@@ -60,7 +62,6 @@ void queue::handleInput()
 					break;
 				}
 			}
-
 			else if (choice == 2) {
 				dq.pop_front();
 				size--;
@@ -68,12 +69,10 @@ void queue::handleInput()
 			}
 			else if (choice == 3) {
 				exit;
-				window->close();
+				return;
 			}
 			else {
-				cout << "Wrong choice!!" << endl;
-				//posnext = posnext - 60;     //keeping the distance the same
-				//poscircle = poscircle - 60;
+				cout << "Wrong choice!" << endl;
 				break;
 			}
 			break;
@@ -81,12 +80,12 @@ void queue::handleInput()
 		sf::Text val(value, font, 25);
 		val.setPosition(12, 235);
 		inp.setPosition(62, 231);
-		//posnext = posnext + 60;
-		//poscircle = poscircle + 60;
+	
 		window->clear();
 		window->draw(text);
 		window->draw(side1);
 		window->draw(side2);
+
 		for (int i = 0; i < dq.size(); i++) {
 			window->draw(inp);
 			val.move(sf::Vector2f(60, 0));

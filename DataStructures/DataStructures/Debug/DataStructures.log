@@ -16,6 +16,9 @@ d:\git\visual-datastructures\datastructures\datastructures\vector\vector.cpp(175
 d:\git\visual-datastructures\datastructures\datastructures\vector\vector.cpp(205): warning C4018: '>': signed/unsigned mismatch
 d:\git\visual-datastructures\datastructures\datastructures\vector\vector.cpp(234): warning C4018: '>=': signed/unsigned mismatch
 d:\git\visual-datastructures\datastructures\datastructures\vector\vector.cpp(245): warning C4018: '>': signed/unsigned mismatch
+  Queue.cpp
+d:\git\visual-datastructures\datastructures\datastructures\queue\queue.cpp(71): warning C4551: function call missing argument list
+d:\git\visual-datastructures\datastructures\datastructures\queue\queue.cpp(89): warning C4018: '<': signed/unsigned mismatch
   Main.cpp
   Node.cpp
 d:\git\visual-datastructures\datastructures\datastructures\linkedlist\node.cpp(10): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
