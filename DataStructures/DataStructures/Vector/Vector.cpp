@@ -4,8 +4,11 @@
 //Class Constructor
 Vector::Vector(sf::RenderWindow &window)
 {
+	std::cout << "Welcome to Vector!" << std::endl;
+
 	//Setting initial drawing indices
 	valueCorX = 80.0f, valueCorY = 300.0f;
+
 	font.loadFromFile("arial_font/arial.ttf");
 	elementsNumber = 0;
 }
@@ -40,7 +43,7 @@ void Vector::markActive(float x, float y, sf::RenderWindow &window)
 	window.draw(activeBar);
 }
 
-//Uses drawIndex to draw the current vector
+//Uses drawIndex to draw the entire vector
 void Vector::drawVector(sf::RenderWindow &window)
 {
 	window.clear(sf::Color::White);		//Making background white
@@ -63,13 +66,13 @@ void Vector::drawVector(sf::RenderWindow &window)
 	elements.setPosition(150.0f, 600.0f);
 	window.draw(elements);
 
-	//Checking if the index is being sorted
 	for (int i = 0; i < arr.size(); i++)
 	{
-		if (indicesToSort[i] == 1)
+		if (indicesToSort[i] == 1)	//Checks if the index is being sorted
 		{
 			markActive(valueCorX, valueCorY, window);
 		}
+
 		drawIndex(window);
 
 		//i-th index text
@@ -116,7 +119,7 @@ void Vector::drawVector(sf::RenderWindow &window)
 //Helper function for MergeSort
 void Vector::Merge(int l, int m, int r)
 {
-	//Marking indecies to be sorted in the map
+	//Marking indecies being sorted in the map
 	indicesToSort.clear();
 	for (int i = l; i <= r; i++)
 		indicesToSort[i] = 1;
@@ -142,6 +145,7 @@ void Vector::Merge(int l, int m, int r)
 			arr[i] = arr2[j2];
 			j2++;
 		}
+
 		_sleep(500);
 	}
 }

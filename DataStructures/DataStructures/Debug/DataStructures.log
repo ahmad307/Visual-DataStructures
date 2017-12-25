@@ -1,93 +1,20 @@
 ﻿  Vector.cpp
-d:\git\visual-datastructures\datastructures\datastructures\vector\vector.cpp(67): warning C4018: '<': signed/unsigned mismatch
-d:\git\visual-datastructures\datastructures\datastructures\vector\vector.cpp(53): warning C4996: 'sf::Text::setColor': was declared deprecated
+d:\git\visual-datastructures\datastructures\datastructures\vector\vector.cpp(69): warning C4018: '<': signed/unsigned mismatch
+d:\git\visual-datastructures\datastructures\datastructures\vector\vector.cpp(56): warning C4996: 'sf::Text::setColor': was declared deprecated
   d:\git\visual-datastructures\datastructures\sfml\include\sfml\graphics\text.hpp(177): note: see declaration of 'sf::Text::setColor'
-d:\git\visual-datastructures\datastructures\datastructures\vector\vector.cpp(61): warning C4996: 'sf::Text::setColor': was declared deprecated
+d:\git\visual-datastructures\datastructures\datastructures\vector\vector.cpp(64): warning C4996: 'sf::Text::setColor': was declared deprecated
   d:\git\visual-datastructures\datastructures\sfml\include\sfml\graphics\text.hpp(177): note: see declaration of 'sf::Text::setColor'
-d:\git\visual-datastructures\datastructures\datastructures\vector\vector.cpp(79): warning C4996: 'sf::Text::setColor': was declared deprecated
+d:\git\visual-datastructures\datastructures\datastructures\vector\vector.cpp(82): warning C4996: 'sf::Text::setColor': was declared deprecated
   d:\git\visual-datastructures\datastructures\sfml\include\sfml\graphics\text.hpp(177): note: see declaration of 'sf::Text::setColor'
-d:\git\visual-datastructures\datastructures\datastructures\vector\vector.cpp(95): warning C4996: 'sf::Text::setColor': was declared deprecated
+d:\git\visual-datastructures\datastructures\datastructures\vector\vector.cpp(98): warning C4996: 'sf::Text::setColor': was declared deprecated
   d:\git\visual-datastructures\datastructures\sfml\include\sfml\graphics\text.hpp(177): note: see declaration of 'sf::Text::setColor'
-d:\git\visual-datastructures\datastructures\datastructures\vector\vector.cpp(145): warning C4996: '_sleep': This function or variable has been superceded by newer library or operating system functionality. Consider using Sleep instead. See online help for details.
+d:\git\visual-datastructures\datastructures\datastructures\vector\vector.cpp(149): warning C4996: '_sleep': This function or variable has been superceded by newer library or operating system functionality. Consider using Sleep instead. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdlib.h(1282): note: see declaration of '_sleep'
-d:\git\visual-datastructures\datastructures\datastructures\vector\vector.cpp(160): warning C4996: '_sleep': This function or variable has been superceded by newer library or operating system functionality. Consider using Sleep instead. See online help for details.
+d:\git\visual-datastructures\datastructures\datastructures\vector\vector.cpp(164): warning C4996: '_sleep': This function or variable has been superceded by newer library or operating system functionality. Consider using Sleep instead. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdlib.h(1282): note: see declaration of '_sleep'
-d:\git\visual-datastructures\datastructures\datastructures\vector\vector.cpp(175): warning C4018: '>=': signed/unsigned mismatch
-d:\git\visual-datastructures\datastructures\datastructures\vector\vector.cpp(205): warning C4018: '>': signed/unsigned mismatch
-d:\git\visual-datastructures\datastructures\datastructures\vector\vector.cpp(234): warning C4018: '>=': signed/unsigned mismatch
-d:\git\visual-datastructures\datastructures\datastructures\vector\vector.cpp(245): warning C4018: '>': signed/unsigned mismatch
-  Queue.cpp
-d:\git\visual-datastructures\datastructures\datastructures\queue\queue.cpp(71): warning C4551: function call missing argument list
-d:\git\visual-datastructures\datastructures\datastructures\queue\queue.cpp(89): warning C4018: '<': signed/unsigned mismatch
-  Main.cpp
-d:\git\visual-datastructures\datastructures\datastructures\main.cpp(26): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
-d:\git\visual-datastructures\datastructures\datastructures\main.cpp(34): warning C4996: 'sf::Text::setColor': was declared deprecated
-  d:\git\visual-datastructures\datastructures\sfml\include\sfml\graphics\text.hpp(177): note: see declaration of 'sf::Text::setColor'
-d:\git\visual-datastructures\datastructures\datastructures\main.cpp(42): warning C4996: 'sf::Text::setColor': was declared deprecated
-  d:\git\visual-datastructures\datastructures\sfml\include\sfml\graphics\text.hpp(177): note: see declaration of 'sf::Text::setColor'
-d:\git\visual-datastructures\datastructures\datastructures\main.cpp(50): warning C4996: 'sf::Text::setColor': was declared deprecated
-  d:\git\visual-datastructures\datastructures\sfml\include\sfml\graphics\text.hpp(177): note: see declaration of 'sf::Text::setColor'
-d:\git\visual-datastructures\datastructures\datastructures\main.cpp(58): warning C4996: 'sf::Text::setColor': was declared deprecated
-  d:\git\visual-datastructures\datastructures\sfml\include\sfml\graphics\text.hpp(177): note: see declaration of 'sf::Text::setColor'
-d:\git\visual-datastructures\datastructures\datastructures\main.cpp(66): warning C4996: 'sf::Text::setColor': was declared deprecated
-  d:\git\visual-datastructures\datastructures\sfml\include\sfml\graphics\text.hpp(177): note: see declaration of 'sf::Text::setColor'
-d:\git\visual-datastructures\datastructures\datastructures\main.cpp(74): warning C4996: 'sf::Text::setColor': was declared deprecated
-  d:\git\visual-datastructures\datastructures\sfml\include\sfml\graphics\text.hpp(177): note: see declaration of 'sf::Text::setColor'
-d:\git\visual-datastructures\datastructures\datastructures\main.cpp(189): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
-d:\git\visual-datastructures\datastructures\datastructures\main.cpp(232): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
-d:\git\visual-datastructures\datastructures\datastructures\bst\bst.cpp(182): warning C4996: 'sf::Text::setColor': was declared deprecated
-  d:\git\visual-datastructures\datastructures\sfml\include\sfml\graphics\text.hpp(177): note: see declaration of 'sf::Text::setColor'
-  d:\git\visual-datastructures\datastructures\datastructures\bst\bst.cpp(164): note: while compiling class template member function 'BST<int>::BST(sf::RenderWindow &,sf::View &)'
-  d:\git\visual-datastructures\datastructures\datastructures\main.cpp(194): note: see reference to function template instantiation 'BST<int>::BST(sf::RenderWindow &,sf::View &)' being compiled
-  d:\git\visual-datastructures\datastructures\datastructures\main.cpp(194): note: see reference to class template instantiation 'BST<int>' being compiled
-d:\git\visual-datastructures\datastructures\datastructures\bst\bst.cpp(189): warning C4996: 'sf::Text::setColor': was declared deprecated
-  d:\git\visual-datastructures\datastructures\sfml\include\sfml\graphics\text.hpp(177): note: see declaration of 'sf::Text::setColor'
-d:\git\visual-datastructures\datastructures\datastructures\bst\bst.cpp(196): warning C4996: 'sf::Text::setColor': was declared deprecated
-  d:\git\visual-datastructures\datastructures\sfml\include\sfml\graphics\text.hpp(177): note: see declaration of 'sf::Text::setColor'
-d:\git\visual-datastructures\datastructures\datastructures\bst\bst.cpp(203): warning C4996: 'sf::Text::setColor': was declared deprecated
-  d:\git\visual-datastructures\datastructures\sfml\include\sfml\graphics\text.hpp(177): note: see declaration of 'sf::Text::setColor'
-d:\git\visual-datastructures\datastructures\datastructures\hashtable\hashtable.cpp(22): warning C4018: '<': signed/unsigned mismatch
-  d:\git\visual-datastructures\datastructures\datastructures\hashtable\hashtable.cpp(11): note: while compiling class template member function 'void HashTable<int>::expand(sf::Vector2f)'
-  d:\git\visual-datastructures\datastructures\datastructures\hashtable\hashtable.cpp(94): note: see reference to function template instantiation 'void HashTable<int>::expand(sf::Vector2f)' being compiled
-  d:\git\visual-datastructures\datastructures\datastructures\hashtable\hashtable.cpp(42): note: while compiling class template member function 'HashTable<int>::HashTable(sf::RenderWindow &,sf::Vector2f)'
-  d:\git\visual-datastructures\datastructures\datastructures\main.cpp(237): note: see reference to function template instantiation 'HashTable<int>::HashTable(sf::RenderWindow &,sf::Vector2f)' being compiled
-  d:\git\visual-datastructures\datastructures\datastructures\main.cpp(237): note: see reference to class template instantiation 'HashTable<int>' being compiled
-d:\git\visual-datastructures\datastructures\datastructures\bst\bst.cpp(110): warning C4305: 'initializing': truncation from 'double' to 'float'
-  d:\git\visual-datastructures\datastructures\datastructures\bst\bst.cpp(104): note: while compiling class template member function 'void BST<int>::drawArrow(float,float,float,float)'
-  d:\git\visual-datastructures\datastructures\datastructures\bst\bst.cpp(89): note: see reference to function template instantiation 'void BST<int>::drawArrow(float,float,float,float)' being compiled
-  d:\git\visual-datastructures\datastructures\datastructures\bst\bst.cpp(35): note: while compiling class template member function 'node<T> *BST<T>::getParent(node<T> *)'
-          with
-          [
-              T=int
-          ]
-  d:\git\visual-datastructures\datastructures\datastructures\bst\bst.cpp(275): note: see reference to function template instantiation 'node<T> *BST<T>::getParent(node<T> *)' being compiled
-          with
-          [
-              T=int
-          ]
-  d:\git\visual-datastructures\datastructures\datastructures\bst\bst.cpp(164): note: while compiling class template member function 'BST<int>::BST(sf::RenderWindow &,sf::View &)'
-  d:\git\visual-datastructures\datastructures\datastructures\main.cpp(194): note: see reference to function template instantiation 'BST<int>::BST(sf::RenderWindow &,sf::View &)' being compiled
-  Node.cpp
-d:\git\visual-datastructures\datastructures\datastructures\linkedlist\node.cpp(10): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-d:\git\visual-datastructures\datastructures\datastructures\linkedlist\node.cpp(16): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-d:\git\visual-datastructures\datastructures\datastructures\linkedlist\node.cpp(21): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-d:\git\visual-datastructures\datastructures\datastructures\linkedlist\node.cpp(24): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-d:\git\visual-datastructures\datastructures\datastructures\linkedlist\node.cpp(28): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-d:\git\visual-datastructures\datastructures\datastructures\linkedlist\node.cpp(37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  LinkedList.cpp
-d:\git\visual-datastructures\datastructures\datastructures\linkedlist\linkedlist.cpp(14): warning C4018: '>': signed/unsigned mismatch
-d:\git\visual-datastructures\datastructures\datastructures\linkedlist\linkedlist.cpp(36): warning C4018: '>': signed/unsigned mismatch
-d:\git\visual-datastructures\datastructures\datastructures\linkedlist\linkedlist.cpp(44): warning C4018: '<': signed/unsigned mismatch
-d:\git\visual-datastructures\datastructures\datastructures\linkedlist\linkedlist.cpp(56): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-d:\git\visual-datastructures\datastructures\datastructures\linkedlist\linkedlist.cpp(57): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-d:\git\visual-datastructures\datastructures\datastructures\linkedlist\linkedlist.cpp(75): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-d:\git\visual-datastructures\datastructures\datastructures\linkedlist\linkedlist.cpp(81): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-d:\git\visual-datastructures\datastructures\datastructures\linkedlist\linkedlist.cpp(93): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-  Generating Code...
-Main.obj : error LNK2019: unresolved external symbol "public: __thiscall LList<int>::LList<int>(class sf::RenderWindow &,class sf::Vector2<float>)" (??0?$LList@H@@QAE@AAVRenderWindow@sf@@V?$Vector2@M@2@@Z) referenced in function "public: __thiscall HashTable<int>::HashTable<int>(class sf::RenderWindow &,class sf::Vector2<float>)" (??0?$HashTable@H@@QAE@AAVRenderWindow@sf@@V?$Vector2@M@2@@Z)
-Main.obj : error LNK2019: unresolved external symbol "public: __thiscall LList<int>::~LList<int>(void)" (??1?$LList@H@@QAE@XZ) referenced in function "public: void * __thiscall LList<int>::`scalar deleting destructor'(unsigned int)" (??_G?$LList@H@@QAEPAXI@Z)
-Main.obj : error LNK2019: unresolved external symbol "public: bool __thiscall LList<int>::insert(struct std::pair<int,int>)" (?insert@?$LList@H@@QAE_NU?$pair@HH@std@@@Z) referenced in function "private: void __thiscall HashTable<int>::expand(class sf::Vector2<float>)" (?expand@?$HashTable@H@@AAEXV?$Vector2@M@sf@@@Z)
-Main.obj : error LNK2019: unresolved external symbol "public: void __thiscall LList<int>::draw(void)" (?draw@?$LList@H@@QAEXXZ) referenced in function "public: void __thiscall HashTable<int>::draw(void)" (?draw@?$HashTable@H@@QAEXXZ)
-Main.obj : error LNK2019: unresolved external symbol "public: class std::vector<struct std::pair<int,int>,class std::allocator<struct std::pair<int,int> > > __thiscall LList<int>::getElements(void)" (?getElements@?$LList@H@@QAE?AV?$vector@U?$pair@HH@std@@V?$allocator@U?$pair@HH@std@@@2@@std@@XZ) referenced in function "private: void __thiscall HashTable<int>::expand(class sf::Vector2<float>)" (?expand@?$HashTable@H@@AAEXV?$Vector2@M@sf@@@Z)
-Main.obj : error LNK2019: unresolved external symbol "public: bool __thiscall LList<int>::removeKey(int)" (?removeKey@?$LList@H@@QAE_NH@Z) referenced in function "public: void __thiscall HashTable<int>::remove(int)" (?remove@?$HashTable@H@@QAEXH@Z)
-D:\Git\Visual-DataStructures\DataStructures\Debug\DataStructures.exe : fatal error LNK1120: 6 unresolved externals
+d:\git\visual-datastructures\datastructures\datastructures\vector\vector.cpp(179): warning C4018: '>=': signed/unsigned mismatch
+d:\git\visual-datastructures\datastructures\datastructures\vector\vector.cpp(209): warning C4018: '>': signed/unsigned mismatch
+d:\git\visual-datastructures\datastructures\datastructures\vector\vector.cpp(238): warning C4018: '>=': signed/unsigned mismatch
+d:\git\visual-datastructures\datastructures\datastructures\vector\vector.cpp(249): warning C4018: '>': signed/unsigned mismatch
+  DataStructures.vcxproj -> D:\Git\Visual-DataStructures\DataStructures\Debug\DataStructures.exe
+  DataStructures.vcxproj -> D:\Git\Visual-DataStructures\DataStructures\Debug\DataStructures.pdb (Partial PDB)

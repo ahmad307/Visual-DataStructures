@@ -1,18 +1,12 @@
 #include <SFML\Graphics.hpp>
+#include "BST\BST.cpp"
+#include "LinkedList\LinkedList.h"
+#include "Queue\Queue.h"
+#include "Vector\Vector.h"
+#include "HashTable\HashTable.cpp"
+#include "HashTable\llist.cpp"
 
-#include"BST\BST.cpp"
-#include"LinkedList\LinkedList.h"
-#include"Queue\Queue.h"
-#include"Stack\Stack.h"
-#include"Vector\Vector.h"
-#include"HashTable\HashTable.cpp"
-
-static const float View_Width = 1920, View_Height = 1080;
-
-int length = 1800, height = 720;
-//Creating display window
-sf::RenderWindow window(sf::VideoMode(length, height), "Visual Data-Structures", sf::Style::Close | sf::Style::Resize);
-
+void createMainWindow(sf::RenderWindow &window, sf::Font font);
 void createVector();
 void createLinkedList();
 void createQueue();
@@ -20,129 +14,155 @@ void createBst();
 void createHashTable();
 void Resize(sf::RenderWindow* window, sf::View* view);
 
+//Setting Main window dimensions
+static const float View_Width = 1920, View_Height = 1080;
+
 int main()
-{
-	
+{	
+	//Creating initial welcome window
 	sf::RenderWindow window(sf::VideoMode(View_Width, View_Height), "DataStructue Visualizer", sf::Style::Default);
+
+	//Setting main font
 	sf::Font font;
 	font.loadFromFile("arial_font/arial.ttf");
+	
+	createMainWindow(window, font);
 
-	sf::Text text1;
-	text1.setString("1- Binary Search Tree");
-	text1.setStyle(sf::Text::Bold | sf::Text::Underlined);
-	text1.setFont(font);
-	text1.setColor(sf::Color::Black);
-	text1.setCharacterSize(45);
-	text1.setPosition(sf::Vector2f(50, 50));
+	return 0;
+}
 
-	sf::Text text2;
-	text2.setString("2- Hash Tables");
-	text2.setStyle(sf::Text::Bold | sf::Text::Underlined);
-	text2.setFont(font);
-	text2.setColor(sf::Color::Black);
-	text2.setCharacterSize(45);
-	text2.setPosition(sf::Vector2f(50.0f, 100.0f));
+void createMainWindow(sf::RenderWindow &window, sf::Font font)
+{
+	//Creating main titles
+	sf::Text Title_BST;
+	Title_BST.setString("1-	Binary Search Tree");
+	Title_BST.setStyle(sf::Text::Bold);
+	Title_BST.setFont(font);
+	Title_BST.setColor(sf::Color::Black);
+	Title_BST.setCharacterSize(45);
+	Title_BST.setPosition(sf::Vector2f(50, 50));
 
-	sf::Text text3;
-	text3.setString("3- Linked List");
-	text3.setStyle(sf::Text::Bold | sf::Text::Underlined);
-	text3.setFont(font);
-	text3.setColor(sf::Color::Black);
-	text3.setCharacterSize(45);
-	text3.setPosition(sf::Vector2f(50.0f, 150.0f));
+	sf::Text Title_HashTable;
+	Title_HashTable.setString("2-   Hash Tables");
+	Title_HashTable.setStyle(sf::Text::Bold);
+	Title_HashTable.setFont(font);
+	Title_HashTable.setColor(sf::Color::Black);
+	Title_HashTable.setCharacterSize(45);
+	Title_HashTable.setPosition(sf::Vector2f(50.0f, 150.0f));
 
-	sf::Text text4;
-	text4.setString("4- vector");
-	text4.setStyle(sf::Text::Bold | sf::Text::Underlined);
-	text4.setFont(font);
-	text4.setColor(sf::Color::Black);
-	text4.setCharacterSize(45);
-	text4.setPosition(sf::Vector2f(50.0f, 200.0f));
+	sf::Text Title_LinkedList;
+	Title_LinkedList.setString("3-   Linked List");
+	Title_LinkedList.setStyle(sf::Text::Bold);
+	Title_LinkedList.setFont(font);
+	Title_LinkedList.setColor(sf::Color::Black);
+	Title_LinkedList.setCharacterSize(45);
+	Title_LinkedList.setPosition(sf::Vector2f(50.0f, 250.0f));
 
-	sf::Text text5;
-	text5.setString("5- stack");
-	text5.setStyle(sf::Text::Bold | sf::Text::Underlined);
-	text5.setFont(font);
-	text5.setColor(sf::Color::Black);
-	text5.setCharacterSize(45);
-	text5.setPosition(sf::Vector2f(50.0f, 250.0f));
+	sf::Text Title_Vector;
+	Title_Vector.setString("4-   Vector");
+	Title_Vector.setStyle(sf::Text::Bold);
+	Title_Vector.setFont(font);
+	Title_Vector.setColor(sf::Color::Black);
+	Title_Vector.setCharacterSize(45);
+	Title_Vector.setPosition(sf::Vector2f(50.0f, 350.0f));
 
-	sf::Text text6;
-	text6.setString("6- queue");
-	text6.setStyle(sf::Text::Bold | sf::Text::Underlined);
-	text6.setFont(font);
-	text6.setColor(sf::Color::Black);
-	text6.setCharacterSize(45);
-	text6.setPosition(sf::Vector2f(50.0f, 300.0f));
+	sf::Text Title_Stack;
+	Title_Stack.setString("5-   Stack(Temporary Down)");
+	Title_Stack.setStyle(sf::Text::Bold);
+	Title_Stack.setFont(font);
+	Title_Stack.setColor(sf::Color::Black);
+	Title_Stack.setCharacterSize(45);
+	Title_Stack.setPosition(sf::Vector2f(50.0f, 450.0f));
 
+	sf::Text Title_Queue;
+	Title_Queue.setString("6-   Queue");
+	Title_Queue.setStyle(sf::Text::Bold);
+	Title_Queue.setFont(font);
+	Title_Queue.setColor(sf::Color::Black);
+	Title_Queue.setCharacterSize(45);
+	Title_Queue.setPosition(sf::Vector2f(50.0f, 550.0f));
+
+	//Handling user input
 	while (window.isOpen())
 	{
 		sf::Event Event;
 		while (window.pollEvent(Event))
 		{
-			switch (Event.type)
+		switch (Event.type)
 			{
 			case sf::Event::Closed:
 				window.close();
 				break;
+
 			case sf::Event::KeyPressed:
+				//Switches to BST window
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1) || sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad1))
 				{
 					window.setVisible(false);
 					createBst();
 					window.setVisible(true);
 				}
+				//Switches to HashTable window
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2) || sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad2))
 				{
 					window.setVisible(false);
 					createHashTable();
 					window.setVisible(true);
 				}
+				//Switches to LinkedList window
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num3) || sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad3))
 				{
 					window.setVisible(false);
 					createLinkedList();
 					window.setVisible(true);
 				}
+				//Switches to Vector window
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num4) || sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad4))
 				{
 					window.setVisible(false);
 					createVector();
 					window.setVisible(true);
 				}
+				//Switches to Stack window
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num5) || sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad5))
 				{
-					//to be done
+					//Temporary not working
+					/* 
 					window.setVisible(false);
-					
+
 					window.setVisible(true);
+					*/
 				}
-				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2) || sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad2))
+				//Switches to Queue window
+				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num6) || sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad2))
 				{
 					window.setVisible(false);
 					createQueue();
 					window.setVisible(true);
 				}
+
 			default:
 				break;
 			}
 		}
+
+		////Drawing main titles
 		window.clear(sf::Color::White);
-		window.draw(text1);
-		window.draw(text2);
-		window.draw(text3);
-		window.draw(text4);
-		window.draw(text5);
-		window.draw(text6);
+		window.draw(Title_BST);
+		window.draw(Title_HashTable);
+		window.draw(Title_LinkedList);
+		window.draw(Title_Vector);
+		window.draw(Title_Stack);
+		window.draw(Title_Queue);
 		window.display();
 	}
-	return 0;
 }
 
 void createVector()
 {
+	//Creating Vector window
 	int length = 1800, height = 720;
-	sf::RenderWindow window(sf::VideoMode(length, height), "Visual Data-Structures", sf::Style::Close | sf::Style::Resize);
+	sf::RenderWindow window(sf::VideoMode(length, height), "Vector", sf::Style::Close | sf::Style::Resize);
 
 	Vector v(window);
 	v.inputHandler();
@@ -159,7 +179,7 @@ void createVector()
 void createLinkedList()
 {
 	int length = 1800, height = 720;
-	sf::RenderWindow window(sf::VideoMode(length, height), "Visual Data-Structures", sf::Style::Close | sf::Style::Resize);
+	sf::RenderWindow window(sf::VideoMode(length, height), "Linked List", sf::Style::Close | sf::Style::Resize);
 
 	LinkedList LL(window);
 	LL.Drawinitial();
@@ -180,7 +200,7 @@ void createLinkedList()
 void createQueue()
 {
 	int length = 1800, height = 720;
-	sf::RenderWindow window(sf::VideoMode(length, height), "Visual Data-Structures", sf::Style::Close | sf::Style::Resize);
+	sf::RenderWindow window(sf::VideoMode(length, height), "Queue", sf::Style::Close | sf::Style::Resize);
 	queue q(window);
 }
 

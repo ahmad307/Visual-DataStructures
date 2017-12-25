@@ -3,6 +3,7 @@
 
 queue::queue(sf::RenderWindow &window )
 {
+	std::cout << "Welcome to Queue!" << std::endl;
 	this->window = &window;
 	float poscircle = 62;
 	int posnext = 72;
