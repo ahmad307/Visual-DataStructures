@@ -5,6 +5,7 @@
 #include "Vector\Vector.h"
 #include "HashTable\HashTable.cpp"
 #include "HashTable\llist.cpp"
+#include "Stack\Stack.h"
 
 void createMainWindow(sf::RenderWindow &window, sf::Font font);
 void createVector();
@@ -12,6 +13,7 @@ void createLinkedList();
 void createQueue();
 void createBst();
 void createHashTable();
+void createStack();
 void Resize(sf::RenderWindow* window, sf::View* view);
 
 //Setting Main window dimensions
@@ -34,13 +36,21 @@ int main()
 void createMainWindow(sf::RenderWindow &window, sf::Font font)
 {
 	//Creating main titles
+	sf::Text Title_main;
+	Title_main.setString("DataStructure Visualization");
+	Title_main.setStyle(sf::Text::Bold | sf::Text::Underlined);
+	Title_main.setFont(font);
+	Title_main.setColor(sf::Color::Black);
+	Title_main.setCharacterSize(45);
+	Title_main.setPosition(sf::Vector2f(650, 50));
+
 	sf::Text Title_BST;
 	Title_BST.setString("1-	Binary Search Tree");
 	Title_BST.setStyle(sf::Text::Bold);
 	Title_BST.setFont(font);
 	Title_BST.setColor(sf::Color::Black);
 	Title_BST.setCharacterSize(45);
-	Title_BST.setPosition(sf::Vector2f(50, 50));
+	Title_BST.setPosition(sf::Vector2f(50, 150.0f));
 
 	sf::Text Title_HashTable;
 	Title_HashTable.setString("2-   Hash Tables");
@@ -48,7 +58,7 @@ void createMainWindow(sf::RenderWindow &window, sf::Font font)
 	Title_HashTable.setFont(font);
 	Title_HashTable.setColor(sf::Color::Black);
 	Title_HashTable.setCharacterSize(45);
-	Title_HashTable.setPosition(sf::Vector2f(50.0f, 150.0f));
+	Title_HashTable.setPosition(sf::Vector2f(50.0f, 250.0f));
 
 	sf::Text Title_LinkedList;
 	Title_LinkedList.setString("3-   Linked List");
@@ -56,7 +66,7 @@ void createMainWindow(sf::RenderWindow &window, sf::Font font)
 	Title_LinkedList.setFont(font);
 	Title_LinkedList.setColor(sf::Color::Black);
 	Title_LinkedList.setCharacterSize(45);
-	Title_LinkedList.setPosition(sf::Vector2f(50.0f, 250.0f));
+	Title_LinkedList.setPosition(sf::Vector2f(50.0f, 350.0f));
 
 	sf::Text Title_Vector;
 	Title_Vector.setString("4-   Vector");
@@ -64,15 +74,15 @@ void createMainWindow(sf::RenderWindow &window, sf::Font font)
 	Title_Vector.setFont(font);
 	Title_Vector.setColor(sf::Color::Black);
 	Title_Vector.setCharacterSize(45);
-	Title_Vector.setPosition(sf::Vector2f(50.0f, 350.0f));
+	Title_Vector.setPosition(sf::Vector2f(50.0f, 450.0f));
 
 	sf::Text Title_Stack;
-	Title_Stack.setString("5-   Stack(Temporary Down)");
+	Title_Stack.setString("5-   Stack");
 	Title_Stack.setStyle(sf::Text::Bold);
 	Title_Stack.setFont(font);
 	Title_Stack.setColor(sf::Color::Black);
 	Title_Stack.setCharacterSize(45);
-	Title_Stack.setPosition(sf::Vector2f(50.0f, 450.0f));
+	Title_Stack.setPosition(sf::Vector2f(50.0f, 550.0f));
 
 	sf::Text Title_Queue;
 	Title_Queue.setString("6-   Queue");
@@ -80,7 +90,7 @@ void createMainWindow(sf::RenderWindow &window, sf::Font font)
 	Title_Queue.setFont(font);
 	Title_Queue.setColor(sf::Color::Black);
 	Title_Queue.setCharacterSize(45);
-	Title_Queue.setPosition(sf::Vector2f(50.0f, 550.0f));
+	Title_Queue.setPosition(sf::Vector2f(50.0f, 650.0f));
 
 	//Handling user input
 	while (window.isOpen())
@@ -126,12 +136,10 @@ void createMainWindow(sf::RenderWindow &window, sf::Font font)
 				//Switches to Stack window
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num5) || sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad5))
 				{
-					//Temporary not working
-					/* 
+					
 					window.setVisible(false);
-
+					createStack();
 					window.setVisible(true);
-					*/
 				}
 				//Switches to Queue window
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num6) || sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad2))
@@ -148,6 +156,7 @@ void createMainWindow(sf::RenderWindow &window, sf::Font font)
 
 		////Drawing main titles
 		window.clear(sf::Color::White);
+		window.draw(Title_main);
 		window.draw(Title_BST);
 		window.draw(Title_HashTable);
 		window.draw(Title_LinkedList);
@@ -160,6 +169,7 @@ void createMainWindow(sf::RenderWindow &window, sf::Font font)
 
 void createVector()
 {
+	system("CLS");
 	//Creating Vector window
 	int length = 1800, height = 720;
 	sf::RenderWindow window(sf::VideoMode(length, height), "Vector", sf::Style::Close | sf::Style::Resize);
@@ -178,6 +188,7 @@ void createVector()
 
 void createLinkedList()
 {
+	system("CLS");
 	int length = 1800, height = 720;
 	sf::RenderWindow window(sf::VideoMode(length, height), "Linked List", sf::Style::Close | sf::Style::Resize);
 
@@ -199,13 +210,15 @@ void createLinkedList()
 
 void createQueue()
 {
-	int length = 1800, height = 720;
+	system("CLS");
+	int length = 1500, height = 720;
 	sf::RenderWindow window(sf::VideoMode(length, height), "Queue", sf::Style::Close | sf::Style::Resize);
 	queue q(window);
 }
 
 void createBst()
 {
+	system("CLS");
 	sf::RenderWindow BSTwindow(sf::VideoMode(View_Width, View_Height), "BST", sf::Style::Default);
 	sf::View BSTview(sf::Vector2f(0.0f, 0.0f), sf::Vector2f(3000.0f, 3000.0f));
 
@@ -214,6 +227,7 @@ void createBst()
 	BST<int> B(BSTwindow, BSTview);
 
 	cout << "***************Welcome To BST***************\n";
+	cout << "A W D to move\n";
 	cout << "Enter [1] to add\n";
 	cout << "Enter [2] to traverse\n";
 	cout << "Enter [3] to Balance\n";
@@ -245,7 +259,9 @@ void createBst()
 
 void createHashTable()
 {
+	system("CLS");
 	cout << "************Welcome To HashTables*************\n";
+	cout << "W A S D to move\n";
 	cout << "Enter 1 to add\n";
 	cout << "Enter 2 to remove\n";
 
@@ -316,6 +332,46 @@ void createHashTable()
 	}
 }
 
+void createStack()
+{
+	system("CLS");
+	sf::RenderWindow window(sf::VideoMode(1800, 720), "Stack Visualizer", sf::Style::Close | sf::Style::Titlebar);
+	StackFunctions c(window);
+	c.DrawForStack();
+	while (window.isOpen())
+	{
+		cout << "Press 1 to Push\nPress 2 to Pop\nPress 3 to Check Balance of a String consists of ')' and '('\nPress 4 to Clear\nPress 5 to Exit\n";
+		string  choice;
+		cin >> choice;
+		if (choice == "1") 
+		{
+			cout << "Enter An Element..\n";
+			string n;
+			cin >> n;
+			c.push(n);
+			cout << "$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n";
+		}
+		if (choice == "2") {
+			c.pop();
+			cout << "$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n";
+		}
+		if (choice == "3") {
+			c.clear();
+			c.CheckBalance();
+			_sleep(2000);
+			c.clear();
+			cout << "$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n";
+		}
+		if (choice == "4") {
+			c.clear();
+			cout << "$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n";
+		}
+		if (choice == "5")
+			window.close();
+		else
+			cout << "Invalid input" << endl;
+	}
+}
 void Resize(sf::RenderWindow* window, sf::View* view)
 {
 	float aspectRatio = (float)window->getSize().x / (float)window->getSize().y;

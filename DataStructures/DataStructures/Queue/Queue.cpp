@@ -5,29 +5,30 @@ queue::queue(sf::RenderWindow &window )
 {
 	std::cout << "Welcome to Queue!" << std::endl;
 	this->window = &window;
-	float poscircle = 62;
+	float poscircle = 92;
 	int posnext = 72;
 	size = 0;
 	
+	//Title text
 	text.setFont(font);
-	text.setCharacterSize(45);
+	text.setCharacterSize(100);
 	text.setString("Queue");
 	font.loadFromFile("arial_font/arial.ttf");
-	text.setPosition(175, 35);
+	text.setPosition(475, 35);
 
-	side1.setSize(sf::Vector2f(400.0f, 12.0f));
+	side1.setSize(sf::Vector2f(830.0f, 12.0f));
 	side1.setFillColor(sf::Color::White);
-	side1.setPosition(50, 206);
+	side1.setPosition(100, 306);
 
-	side2.setSize(sf::Vector2f(400.0f, 12.0f));
+	side2.setSize(sf::Vector2f(830.0f, 12.0f));
 	side2.setFillColor(sf::Color::White);
-	side2.setPosition(50, 284);
+	side2.setPosition(100, 420);
 
-	inp.setRadius(20);
+	inp.setRadius(30);
 	inp.setFillColor(sf::Color::Transparent);
 	inp.setOutlineThickness(10);
 	inp.setOutlineColor(sf::Color::Red);
-	inp.setPosition(poscircle, 231);
+	inp.setPosition(poscircle, 450);
 
 	handleInput();
 }
@@ -51,7 +52,7 @@ void queue::handleInput()
 			cin >> choice;
 
 			if (choice == 1) {
-				if (size == 7) {
+				if (size == 11) {
 					cout << "Queue reached the max size!" << endl;
 					break;
 				}
@@ -78,9 +79,9 @@ void queue::handleInput()
 			}
 			break;
 		}
-		sf::Text val(value, font, 25);
-		val.setPosition(12, 235);
-		inp.setPosition(62, 231);
+		sf::Text val(value, font, 40);
+		val.setPosition(20, 335);
+		inp.setPosition(92, 340);
 	
 		window->clear();
 		window->draw(text);
@@ -89,8 +90,8 @@ void queue::handleInput()
 
 		for (int i = 0; i < dq.size(); i++) {
 			window->draw(inp);
-			val.move(sf::Vector2f(60, 0));
-			inp.move(sf::Vector2f(60, 0));
+			val.move(sf::Vector2f(80, 0));
+			inp.move(sf::Vector2f(80, 0));
 			val.setString(dq[i]);
 			window->draw(val);
 		}
