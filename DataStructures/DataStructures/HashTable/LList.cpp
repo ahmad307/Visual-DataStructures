@@ -1,13 +1,6 @@
 #include "LList.h"
 
 template<class T>
-void Nodee<T>::setPosition(sf::Vector2f position)
-{
-	rectangle.setPosition(position);
-	text.setPosition(sf::Vector2f(position.x + rectangle.getSize().x / 6, position.y + rectangle.getSize().y / 3));
-}
-
-template<class T>
 Nodee<T>::Nodee(pair<int, T> value, sf::Vector2f size, sf::Texture* NodeeTexture)
 {
 	this->value = value;
@@ -24,6 +17,13 @@ Nodee<T>::Nodee(pair<int, T> value, sf::Vector2f size, sf::Texture* NodeeTexture
 	next = nullptr;
 }
 
+template<class T>
+void Nodee<T>::setPosition(sf::Vector2f position)
+{
+	rectangle.setPosition(position);
+	text.setPosition(sf::Vector2f(position.x + rectangle.getSize().x / 6, position.y + rectangle.getSize().y / 3));
+}
+
 template <class T>
 LList<T>::LList(sf::RenderWindow & window, sf::Vector2f position)
 {
@@ -32,33 +32,6 @@ LList<T>::LList(sf::RenderWindow & window, sf::Vector2f position)
 	this->position = position;
 	font.loadFromFile("arial_font/arial.ttf");
 	size = 0;
-}
-
-template <class T>
-LList<T>::~LList()
-{
-	clear();
-}
-
-template<class T>
-void LList<T>::clear()
-{
-	while (head != nullptr)
-	{
-		Nodee<T>* temp = head;
-		head = head->next;
-		delete temp;
-	}
-}
-
-template<class T>
-void LList<T>::drawArrow(sf::Vector2f first, sf::Vector2f second)
-{
-	sf::RectangleShape rectangle;
-	rectangle.setSize(sf::Vector2f(sqrt(pow(first.x - second.x, 2) + pow(first.y - second.y, 2)), 20.0f));
-	rectangle.setPosition(first);
-	rectangle.setFillColor(sf::Color::Black);
-	window->draw(rectangle);
 }
 
 template<class T>
@@ -86,6 +59,35 @@ bool LList<T>::insert(pair<int, T> value)
 		size++;
 	}
 	return true;
+}
+
+template<class T>
+bool LList<T>::removeKey(int key)
+{
+	if (head != nullptr && head->value.first == key)
+	{
+		Nodee<T>* temp = head;
+		head = head->next;
+		size--;
+		delete temp;
+		return true;
+	}
+	Nodee<T>* temp = head;
+	while (temp != nullptr)
+	{
+		if (temp->next == nullptr)
+			return false;
+		if (temp->next->value.first == key)
+		{
+			Nodee<T>* temp2 = temp->next;
+			temp->next = temp->next->next;
+			delete temp2;
+			size--;
+			return true;
+		}
+		temp = temp->next;
+	}
+	return false;
 }
 
 template<class T>
@@ -129,6 +131,17 @@ void LList<T>::draw()
 	window->draw(rect), window->draw(text);
 }
 
+
+template<class T>
+void LList<T>::drawArrow(sf::Vector2f first, sf::Vector2f second)
+{
+	sf::RectangleShape rectangle;
+	rectangle.setSize(sf::Vector2f(sqrt(pow(first.x - second.x, 2) + pow(first.y - second.y, 2)), 20.0f));
+	rectangle.setPosition(first);
+	rectangle.setFillColor(sf::Color::Black);
+	window->draw(rectangle);
+}
+
 template<class T>
 T LList<T>::getval(int key)
 {
@@ -157,30 +170,18 @@ vector<pair<int, T>> LList<T>::getElements()
 }
 
 template<class T>
-bool LList<T>::removeKey(int key)
+void LList<T>::clear()
 {
-	if (head != nullptr && head->value.first == key)
+	while (head != nullptr)
 	{
 		Nodee<T>* temp = head;
 		head = head->next;
-		size--;
 		delete temp;
-		return true;
 	}
-	Nodee<T>* temp = head;
-	while (temp != nullptr)
-	{
-		if (temp->next == nullptr)
-			return false;
-		if (temp->next->value.first == key)
-		{
-			Nodee<T>* temp2 = temp->next;
-			temp->next = temp->next->next;
-			delete temp2;
-			size--;
-			return true;
-		}
-		temp = temp->next;
-	}
-	return false;
+}
+
+template <class T>
+LList<T>::~LList()
+{
+	clear();
 }
