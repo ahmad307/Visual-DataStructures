@@ -351,22 +351,22 @@ void createStack()
 			c.push(n);
 			cout << "$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n";
 		}
-		if (choice == "2") {
+		else if (choice == "2") {
 			c.pop();
 			cout << "$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n";
 		}
-		if (choice == "3") {
+		else if (choice == "3") {
 			c.clear();
 			c.CheckBalance();
 			_sleep(2000);
 			c.clear();
 			cout << "$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n";
 		}
-		if (choice == "4") {
+		else if (choice == "4") {
 			c.clear();
 			cout << "$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n";
 		}
-		if (choice == "5")
+		else if (choice == "5")
 			window.close();
 		else
 			cout << "Invalid input" << endl;
